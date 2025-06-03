@@ -19,7 +19,7 @@ console.log("yo");
 
 /* Legger til hendelseslytter som kjører en funksjon ved klikk */
 addTodo.addEventListener("click", function (event) {
-    event.preventDefault(); //
+    event.preventDefault(); // hindrer funksjonen fra å restarte som er default i forms
     console.log("Button click?");
 
     /* Lager konstant som henter inputsfeltet fra html-dokumentet */
@@ -41,12 +41,19 @@ addTodo.addEventListener("click", function (event) {
     deleteTodo.addEventListener("click", function () {
         todoItem.remove(); //metode for å slette gjøremål ved klikk
     });
+    /* Lager en knapp som skal markere gjøremål gjort */
+    const markFinished = document.createElement("button");
+    markFinished.textContent = "Ferdig";
+    markFinished.addEventListener("click", () => { 
+        todoItem.classList.add("finished");
+     });
 
     /* Lager konstant som lagrer listeelementet i fra HTML hvor gjøremålslisten skal vises. */
     const todoDisplay = document.getElementById("todoDisplay");
     console.log(todoDisplay);
 
-    /* Lager elementer i DOM av sletteknapp-variabelen og visningsvariabelen. */
+    /* Lager elementer i DOM av sletteknapp-variabelen og ferdigvariabelen visningsvariabelen. */
     todoItem.appendChild(deleteTodo);
+    todoItem.appendChild(markFinished);
     todoDisplay.appendChild(todoItem);
 });

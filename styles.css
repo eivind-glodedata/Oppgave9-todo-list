@@ -1,8 +1,30 @@
+:root {
+  --primary-color: #ffb054;
+  --background-color: #000d1a;
+  --secondary-color: #ffc663;
+  --light-background-color: #f0a050;
+  --oldschool-color: #14b814;
+  --header-font: sans-serif;
+  --header-font-size: 30px;
+--darker-green: #003100;}
+
+body {
+  background-color: var(--background-color);
+}
+
 /* HEADER */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+	color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2rem;
+	font-weight: bold;
+	padding: 1rem 0;
+	font-family: serif;
 }
 
 .headerNav {
@@ -16,7 +38,7 @@ header {
 .links:link,
 .links:hover,
 .links:active {
-  color: black;
+  color:#14b814;
 }
 
 .headerLogo {
@@ -26,6 +48,15 @@ header {
 /* MAIN */
 main {
   min-height: 100vh;
+  color: var(--oldschool-color);
+}
+
+.sectionHero {
+  justify-items: center;
+}
+
+.finished {
+  text-decoration: line-through;
 }
 
 /* FOOTER */
