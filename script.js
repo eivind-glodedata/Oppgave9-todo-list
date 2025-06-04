@@ -38,14 +38,16 @@ addTodo.addEventListener("click", function (event) {
     /* Lager en knapp som skal brukes til å slette gjøremål, med tekst "Slett," og så hendelseslytter på klikk. */
     const deleteTodo = document.createElement("button");
     deleteTodo.textContent = "Slett";
-    deleteTodo.addEventListener("click", function () {
-        todoItem.remove(); //metode for å slette gjøremål ved klikk
+    deleteTodo.addEventListener("click", function () { if (todoItem.classList.value == "finished") {
+        todoItem.remove();} //metode for å slette gjøremål ved klikk }
+        else {console.log("Kan ikke slette uferdig gjøremål!");}
     });
     /* Lager en knapp som skal markere gjøremål gjort */
     const markFinished = document.createElement("button");
     markFinished.textContent = "Ferdig";
     markFinished.addEventListener("click", () => { 
         todoItem.classList.add("finished");
+        console.log(todoItem.classList.value);
      });
 
     /* Lager konstant som lagrer listeelementet i fra HTML hvor gjøremålslisten skal vises. */
@@ -57,3 +59,13 @@ addTodo.addEventListener("click", function (event) {
     todoItem.appendChild(markFinished);
     todoDisplay.appendChild(todoItem);
 });
+
+
+/*
+function hasClass(element, className) {
+    return element.classList.contains(className);
+  }
+
+const element = document.querySelector('.example');
+console.log(hasClass(element, 'example')); // true or false
+*/

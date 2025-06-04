@@ -12,6 +12,10 @@ body {
   background-color: var(--background-color);
 }
 
+button:hover {
+  background-color: #f0a050;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -36,9 +40,12 @@ h1 {
 
 .links,
 .links:link,
-.links:hover,
 .links:active {
   color:#14b814;
+}
+
+.links:hover {
+  color: #f0a050
 }
 
 .headerLogo {
