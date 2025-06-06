@@ -11,11 +11,10 @@ console.log("Hello?");
 const addTodo = document.getElementById("addTodo"); // En variabel som henter HTML element med #addTodo
 console.log(addTodo);
 
-/** is this comment linked to function */ //sånn linkes kommentart til funksjon
+/** is this comment linked to function? */ //sånn linkes kommentar til funksjon
 function testcommmentlink () {
-console.log("yo");
+console.log("yeah");
 };
-
 
 /* Legger til hendelseslytter som kjører en funksjon ved klikk */
 addTodo.addEventListener("click", function (event) {
@@ -39,7 +38,7 @@ addTodo.addEventListener("click", function (event) {
     const deleteTodo = document.createElement("button");
     deleteTodo.textContent = "Slett";
     deleteTodo.addEventListener("click", function () { if (todoItem.classList.value == "finished") {
-        todoItem.remove();} //metode for å slette gjøremål ved klikk }
+        todoItem.remove();} //metode for å slette gjøremål ved klikk hvis den er klassifisert som ferdig}
         else {console.log("Kan ikke slette uferdig gjøremål!");}
     });
     /* Lager en knapp som skal markere gjøremål gjort */
@@ -54,18 +53,8 @@ addTodo.addEventListener("click", function (event) {
     const todoDisplay = document.getElementById("todoDisplay");
     console.log(todoDisplay);
 
-    /* Lager elementer i DOM av sletteknapp-variabelen og ferdigvariabelen visningsvariabelen. */
+    /* Lager elementer i DOM av sletteknapp-variabelen og ferdigvariabelen og visningsvariabelen. */
     todoItem.appendChild(deleteTodo);
     todoItem.appendChild(markFinished);
     todoDisplay.appendChild(todoItem);
 });
-
-
-/*
-function hasClass(element, className) {
-    return element.classList.contains(className);
-  }
-
-const element = document.querySelector('.example');
-console.log(hasClass(element, 'example')); // true or false
-*/
